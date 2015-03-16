@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="big5">
+ <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>Search Page</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/TubePlayTab.css">
+	<!-- <link rel="stylesheet" href="../../css/search/searchPage.css"> -->
+	
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script><!-- Export CSS  -->
+	
+
+	<script type="text/javascript" src="../../js/lib/jquery-2.1.3.min.js"></script>
+	<!-- 
+	<script type="text/javascript" src="../../js/lib/angularjs-1.3.12/angular.min.js"></script>
+	<script type="text/javascript" src="../../js/lib/angularjs-1.3.12/angular.min.js.map"></script>
+	 -->
+	 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	
+	<script type="text/javascript" src="../../js/search/searchList.js"></script>
+</head>
+<body>
+
+  
+  <div ng-app="searchModule" ng-controller="SearchListController">
+  
+  
+	  <div>
+	    <div class="input-group form-group-lg">
+	      <input type="text" class="form-control content-text" placeholder="search on YouTube" 
+	      		 ng-model="textSearch" ng-change="searchTextChanged(textSearch)">
+	      
+		  <span class="input-group-btn">
+	        <button class="btn btn-lg glyphicon glyphicon-search" 
+	        	style="margin-top:-2px;" type="button"
+	        	ng-click="searchYoutubeListForText(textSearch)"></button>
+	      </span>
+	    </div><!-- /input-group -->
+	    
+	    <!-- SearchFuzzy Suggestion List  -->
+	    <!-- <ul id="ulSearchFuzzy" class="noneListStyle" style="overflow-y: auto; "
+	    	ng-class="{true:'border', false: ''}[fuzzySuggestListHasBorder()]" > -->
+	    <ul id="ulSearchFuzzy" class="noneListStyle" style="overflow-y: auto; margin-bottom:4em">
+	    	
+	    	<li class="listItemStyle"
+	    	    style="color:#FF6666; font-weight:bold; margin-left:-30px; padding-left:10px" 
+	    	    ng-init="focus=false;blur=false;active=false"
+	    	    ng-mouseover="focus=true;blur=false;active=false;" ng-mouseleave="blur=true;focus=false;active=false;"
+	    	    
+				ng-repeat="string in queryTextFuzzy"
+	    		ng-click="searchYoutubeListForText(string)" 
+	    		ng-class="{ listItemHighLightGray: focus,  '':blur }">
+	    		
+				<div class="form-group-lg" style="font-size:1.85em; ">
+			      
+			      {{string}}
+			      <span class="glyphicon glyphicon-chevron-right pull-right" style="width:50px; text-align:center;" /> 
+			      <!-- <span ng-class="{true:'', false: 'glyphicon glyphicon-chevron-right pull-right'}[fuzzySuggestListItemNone(string)]" style="width:50px; text-align:center;" /> -->
+			      <!-- <span ng-class="{true:'', false: 'glyphicon glyphicon-chevron-right pull-right'}[fuzzySuggestListItemNone(string)]" style="width:50px; text-align:center;" /> -->
+			    </div>
+	    		
+	    	</li>
+	    </ul>
+	    
+	    
+	   
+	  </div><!-- /.col-lg-6    search panel-->
+	  
+	  
+	  <ul class="back-button-bottom navbar-fixed-bottom noneListStyle" >
+	  	<li >
+	  		<a class="active glyphicon glyphicon-chevron-left" href="searchPage.html" onclick="history.go(-1);return true;">Cancel</a>
+	  	</li>
+		<!-- <li class="active glyphicon glyphicon-chevron-left"><a href="searchPage.html">Cancel</a></li> -->
+		<!-- <li class="active glyphicon glyphicon-chevron-left">
+			<form><input Type="button" value="Cancel" onclick="history.go(-1);return true;"></form>
+		</li> -->
+	  </ul>
+  </div>
+  
+  
+</body>
+</html>

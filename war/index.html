@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="">
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Hello App Engine</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	
+  </head>
+
+  <body>
+    <!-- <div class="tabsContainer">
+	  <div ng-include="'modules/search/playlistPage.html'"></div>
+	  <div ng-include="'modules/search/searchPage.html'"></div>
+	</div> -->
+    <h1>Hello App Engine!</h1>
+	<!-- <a href="https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com%2Fauth%2Fuserinfo.email+https://www.googleapis.com%2Fauth%2Fuserinfo.profile&state=/profile&redirect_uri=http://1-dot-utube4ranni.appspot.com/oauth2callback&response_type=code&client_id=189741341817-1ks23ob9n0nrk6ufiiusqvlkq26ki5pn.apps.googleusercontent.com"> -->
+	<!-- <a href="https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/drive.file&state=/profile&redirect_uri=http://localhost:8888/oauth2callback&response_type=code&client_id=189741341817-1ks23ob9n0nrk6ufiiusqvlkq26ki5pn.apps.googleusercontent.com">
+		使用Google登入
+		https://accounts.google.com/o/oauth2/auth?
+			/////////scope=https://www.googleapis.com%2Fauth%2Fuserinfo.email+https://www.googleapis.com%2Fauth%2Fuserinfo.profile
+			scope=https://www.googleapis.com/auth/drive.file
+			&state=/profile
+			&redirect_uri=http://1-dot-utube4ranni.appspot.com/oauth2callback
+			&response_type=code
+			&client_id=189741341817-1ks23ob9n0nrk6ufiiusqvlkq26ki5pn.apps.googleusercontent.com
+	</a> -->
+	</br></br></br>
+	<!-- <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=189741341817-1ks23ob9n0nrk6ufiiusqvlkq26ki5pn.apps.googleusercontent.com&redirect_uri=http://localhost:8888/login&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email">
+	以Google帳戶登入</a> -->
+	<a href="https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=189741341817-1ks23ob9n0nrk6ufiiusqvlkq26ki5pn.apps.googleusercontent.com&redirect_uri=http://localhost:8888/rest/AuthRest/GoogleDriveAuth&scope=https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/userinfo.profile&state={'action':'ACTION_CREATE_FOLDER', 'data'='我是歌手第第三季'}">
+	以Google帳戶登入</a>
+	
+    <table>
+      <tr>
+        <td colspan="2" style="font-weight:bold;">Available Servlets:</td>        
+      </tr>
+      <tr>
+        <td><a href="/tubeplayer">TubePlayer</a></td>
+      </tr>
+      <tr>
+        <td><a href="modules/search/searchPage.html">Search Page</a></td>
+      </tr>
+    </table>
+    
+    <!-- 
+    <div id='divider'> 
+   	 <div ng-include src="modules/account/accountPage.html"></div>
+    #include virtual="modules/account/accountPage.html"  
+	</div> -->
+   
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="BIG5">
+<!-- <meta charset="utf-8"> -->
+ <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>Search Page_ UTube</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/TubePlayTab.css">
+	<link rel="stylesheet" href="../../css/search/searchPage.css">
+	
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script><!-- Export CSS  -->
+	
+
+	<script type="text/javascript" src="../../js/lib/jquery-2.1.3.min.js"></script>
+	<!-- 
+	<script type="text/javascript" src="../../js/lib/angularjs-1.3.12/angular.min.js"></script>
+	<script type="text/javascript" src="../../js/lib/angularjs-1.3.12/angular.min.js.map"></script>
+	 -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<!-- <script src="http://www.youtubemp3script.com/api/youtubemp3script-v1.js"></script> -->
+	<script type="text/javascript" src="js/operateDB.js"></</script> 
+
+	<script type="text/javascript" src="../../js/search/searchPage.js"></script>
+</head>
+<body>
+
+  <div class="panel panel-success">
+  	<div class="panel-heading">YouTube</div>
+  </div>
+  <div style="padding-left:2%;padding-right:2%; margin-top:-0.4em"  ng-app="searchModule" ng-controller="SearchController">
+  
+  		<!-- <a href="http://www.yt-mp3.com/watch?v=o_lgy56Ft2A" onClick="return YoutubeMp3Script(this)">Download MP3</a> -->
+	  <div>
+		  <div class="my_content_container">
+		    <a href="searchList.html">{{searchYTText}}</a>
+		  </div>
+		 <!--  
+		 <input type="text" class="form-control content-text" placeholder="search on YouTube" 
+	      		 ng-model="textSearch" ng-change="searchTextChanged(textSearch)">
+	      		 
+		 <span class="input-group-btn">
+	        <button class="btn btn-default btn-lg glyphicon glyphicon-search" 
+	        	style="margin-top:-2px;" 
+	        	type="button"></button>
+	      </span> -->
+	    </div><!-- /input-group -->
+	    
+	    <!-- SearchFuzzy Suggestion List 
+	    <ul id="ulSearchFuzzy" class="noneListStyle" style="max-height:10em; overflow-y: auto; margin-right:3.7em"
+	    	ng-class="{true:'border', false: ''}[fuzzySuggestListHasBorder()]" >
+	    	
+	    	<li style="line-height:2.6em; color:#FF6666; font-weight:bold; margin-left:-40px; padding-left:10px" 
+	    	    ng-init="focus=false;blur=false;active=false"
+	    	    ng-mouseover="focus=true;blur=false;active=false;" ng-mouseleave="blur=true;focus=false;active=false;"
+	    	    
+				ng-repeat="string in queryTextFuzzy"
+	    		ng-click="searchYoutubeListForText(string)" 
+	    		ng-class="{ listItemHighLightGray: focus,  '':blur }">  {{string}}</li>
+	    </ul>
+	    -->
+	    
+	    <!-- Search Result -->
+	    <div style="margin-top:1.5em ; margin-bottom:4em">
+	    	 <ul id="ulSearchEmptyResult" class="noneListStyle" 
+	    	 	style="background-color:yellow; border: 2px dotted gray" 
+	    		ng-class="{true:'', false:'searchResultListGone'}[searchResultListGone()]">
+	    		<li style="font-size:1.35em; margin-left:-2em;  padding-top:0.5em; padding-bottom:0.5em" 
+	    			ng-class="{true:'searchResultListGone', false:''}[searchEmptyResultList()]" >請於上方輸入搜尋字眼</li>
+	    		<li style="font-size:1.35em; margin-left:-2em; padding-top:0.5em; padding-bottom:0.5em" 
+	    			ng-class="{true:'', false:'searchResultListGone'}[searchEmptyResultList()]">找不到</li>
+		    </ul>
+		    <ul id="ulSearchResult" class="noneListStyle" style="font-size:1.35em; overflow-y: auto; " 
+		    	ng-class="{true:'searchResultListGone', false:''}[searchResultListGone()]" 
+		    	ng-repeat="resultItem in queryYTResultList" 
+		    	ng-click="musicPlay($index)" >
+		    <!-- <ul id="ulSearchResult" class="noneListStyle" style="background-color:red;" 
+		   		ng-repeat="resultItem in queryYTResultList"> -->
+		    	<li class="listItemStyle"
+		    		style="color:black; font-weight:bold; margin-left:-30px; padding-left:10px" >
+		    		{{resultItem.title.$t}}
+		    		<span class="glyphicon glyphicon-play-circle pull-right" style="color:red ;width:50px; text-align:center;" /> 
+		    	</li>
+		    </ul>
+	    </div>
+	   
+	  </div><!-- /.col-lg-6    search panel-->
+	  
+	  
+	  <!-- fotter tab -->
+	  <ul class="nav nav-tabs navbar-fixed-bottom "  style="margin-left:2%;margin-right:-2%;"
+	  		ng-class="{true:'hiddenContent', false: ''}[tabShoudHide()]" >
+		<li ><a href="../playlist/playlistPage.html">聽歌</a></li>
+		<li class="active"><a href="../search/searchPage.html">YouTube</a></li>
+		<li ><a href="../account/accountPage.html">帳號</a></li>
+	  </ul>
+  </div>
+</body>
+</html>

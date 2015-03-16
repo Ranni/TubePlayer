@@ -1,0 +1,17 @@
+.my_content_container a {
+    border: 0.065em solid #bbb;
+    color: gray;
+    display: block;
+    padding: 0.25em;
+    width: 100%;       
+    text-decoration: none;       
+    /*text-align: center;*/
+    font-size:1.3em;
+}
+
+.searchResultListGone{
+	display:none;
+}
+/* .searchResultListDisplay{
+	display:true;
+} */

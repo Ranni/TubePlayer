@@ -1,0 +1,89 @@
+/* @media screen and (min-width: 1024px) {
+    body{font-size: 60%;}
+} */
+
+.panel-heading{
+	font-weight:bold;
+	font-size:1.2em;
+	text-align: center;
+}
+.content-text{
+	font-size:1em;
+}
+
+.hiddenContent{
+	display:none;
+}
+
+
+.border {      
+  border: 1px solid #66CCFF; 
+}
+
+.noneListStyle{
+	list-style-type:none; 
+}
+.listItemHighLightGray{
+	background-color: #e3e3e3;
+}
+.listItemStyle{
+	border-color: #66CCFF;
+	border-width:2px;	
+    border-style: none none dotted none;
+}
+
+.nav-tabs{
+	height:4em;
+}
+
+
+.back-button-bottom{
+	width:100%;
+	font-size:2em;
+	background-color: #CCFFCC;
+	border: 2px groove #99CC99;
+	text-align: center;   
+}
+.back-button-bottom>li>a, .back-button-bottom>li>a:hover, .back-button-bottom>li.active>a:hover, .back-button-bottom>li.active>a:focus {
+  color: #000;
+  
+  font-weight:bold;
+  text-decoration: none;
+}
+
+
+/*width*/
+.nav-tabs>li{
+ height:100%;
+ width:32%;
+}
+/* active tab width x
+.nav-tabs>li.active {
+  width:32%;
+}*/
+
+/* tab color */
+.nav-tabs>li>a {
+  height:100%;
+  line-height:2em;
+  background-color: #ddd; 
+  color:#000;
+  text-align: center;
+  font-weight:bold;
+  font-size:1.35em;
+}
+
+/* active tab color */
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+  color: #000;
+  background-color: #D7EBD7;
+  border: 2px groove #669966;
+  font-weight:bold;
+}
+
+/* hover tab color */
+.nav-tabs>li>a:hover {
+  border-color: #000000;
+  background-color: #999;
+  color: #fff;
+}
